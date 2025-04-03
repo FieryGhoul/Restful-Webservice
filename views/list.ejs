@@ -1,0 +1,71 @@
+<!-- views/list.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>People List</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .actions {
+            display: flex;
+            gap: 10px;
+        }
+        .add-btn {
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h1>People List</h1>
+    
+    <a href="/person/create" class="add-btn">Add New Person</a>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Mobile Number</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% if (people && people.length > 0) { %>
+                <% people.forEach(person => { %>
+                    <tr>
+                        <td><%= person.name %></td>
+                        <td><%= person.age %></td>
+                        <td><%= person.gender %></td>
+                        <td><%= person.mobileNumber %></td>
+                        <td class="actions">
+                            <a href="/person/edit/<%= person._id %>">Edit</a>
+                            <a href="/person/delete/<%= person._id %>">Delete</a>
+                        </td>
+                    </tr>
+                <% }); %>
+            <% } else { %>
+                <tr>
+                    <td colspan="5">No people found</td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+</body>
+</html>
