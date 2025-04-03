@@ -1,41 +1,26 @@
-# People Management Application (Angular 7/8)
+
+# Create a RESTful Web Service Using Nodejs and MongoDB(to store Data)
 
 A Single Page Application to manage a list of people with CRUD operations.
 
 ## Features
 
-- List all people
-- Edit person details
-- Delete person with confirmation
-- Form validation
-- REST API integration
+- GET /person: Fetches a list of all people in the database.
+- POST /person: Creates a new person in the database.
+- PUT /person/:id: Updates an existing person's details by their ID.
+- DELETE /person/:id: Deletes a person from the database by their ID.
 
-## Prerequisites
 
-- Node.js 
-- npm (comes with Node.js)
-- 
-## Backend Setup
 
-1. Initialize Node.js project:
+## Installation
+
 ```bash
 npm init -y
+```
+```bash
+npm install express mongoose body-parser cors nodemon dotenv
+```
 
-npm install express mongoose body-parser nodemon
-
-
-Development
-Start the backend server (in one terminal):
-
-bash
-Copy
+```bash
 npm run dev
-Start the Angular development server (in another terminal):
-
-bash
-Copy
-ng serve
-Open your browser to:
-
-Copy
-http://localhost:4200
+```
