@@ -1,0 +1,40 @@
+<!-- views/error.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Error</title>
+    <style>
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .error-box {
+            background-color: #ffebee;
+            border: 1px solid #f44336;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Error</h1>
+        
+        <div class="error-box">
+            <h2><%= message %></h2>
+            <% if (locals.error) { %>
+                <p><%= error %></p>
+            <% } %>
+        </div>
+        
+        <a href="/person" class="back-link">Back to List</a>
+    </div>
+</body>
+</html>
