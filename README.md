@@ -10,7 +10,7 @@ A Single Page Application to manage a list of people with CRUD operations.
 - PUT /person/:id: Updates an existing person's details by their ID.
 - DELETE /person/:id: Deletes a person from the database by their ID.
 
-
+http://localhost:3000/person
 
 ## Installation
 
